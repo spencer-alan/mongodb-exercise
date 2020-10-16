@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 module.exports = (app) => {
   // Create a new workout
-  app.post("/api/workouts", ({ body }, res) => {
+  app.post("/api/workouts", (body, res) => {
     Workout.create(body)
     .then(dbWorkouts => {
       res.status(201).json(dbWorkouts);
